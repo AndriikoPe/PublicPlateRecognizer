@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA257D4701B1FC71988FB6E9 /* Pods_PlateRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2B6F147F39D1B50C9ED9C9 /* Pods_PlateRecognizer.framework */; };
+		BF0975EF2860D8FC00616736 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0975EE2860D8FC00616736 /* CameraPreview.swift */; };
+		BF0EA6622860F32200F0F57D /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF0EA6602860F0EE00F0F57D /* Roboto.ttf */; };
+		BF2C276F2873053C00619767 /* RecognizedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C276E2873053C00619767 /* RecognizedInfoView.swift */; };
+		BF2C2772287382A500619767 /* RecognizedDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C2771287382A500619767 /* RecognizedDetails.swift */; };
+		BF2C27742874DF2D00619767 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C27732874DF2D00619767 /* MapView.swift */; };
+		BF2C27762874E06000619767 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C27752874E06000619767 /* MapModel.swift */; };
+		BF2C27782874E12400619767 /* MapApiVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C27772874E12400619767 /* MapApiVm.swift */; };
+		BF3A4BD62872009D00D018FB /* ScannerOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A4BD52872009D00D018FB /* ScannerOverlay.swift */; };
+		BF3A4BD9287204F400D018FB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A4BD8287204F400D018FB /* Constants.swift */; };
+		BF9574DD286D7E3B0048B6BD /* PlateDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9574DC286D7E3B0048B6BD /* PlateDataFetcher.swift */; };
+		BF9574DF286E43180048B6BD /* PlateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9574DE286E43180048B6BD /* PlateData.swift */; };
+		BF9DE1CC2864D0FF00E3C0F4 /* PlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9DE1CB2864D0FF00E3C0F4 /* PlateView.swift */; };
+		BF9DE1CE2864D8C500E3C0F4 /* UKNumberPlate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF9DE1CD2864D8C500E3C0F4 /* UKNumberPlate.ttf */; };
+		BF9DE1D02864DB3900E3C0F4 /* PlateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9DE1CF2864DB3900E3C0F4 /* PlateListView.swift */; };
+		BF9DE1D22865ACFD00E3C0F4 /* PlatesVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9DE1D12865ACFD00E3C0F4 /* PlatesVm.swift */; };
+		BF9DE1D42865AD8800E3C0F4 /* Plate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9DE1D32865AD8800E3C0F4 /* Plate.swift */; };
+		BF9DE1D928663C9B00E3C0F4 /* CameraVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9DE1D828663C9B00E3C0F4 /* CameraVm.swift */; };
+		BFAA74AE286718FB0005E185 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA74AD286718FB0005E185 /* Utils.swift */; };
+		BFAA74B02867242F0005E185 /* PlateDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAA74AF2867242F0005E185 /* PlateDetailsView.swift */; };
+		BFBF07D7285F89F9002AEEE3 /* PlateRecognizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBF07D6285F89F9002AEEE3 /* PlateRecognizerApp.swift */; };
+		BFBF07D9285F89F9002AEEE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBF07D8285F89F9002AEEE3 /* ContentView.swift */; };
+		BFBF07DB285F89FC002AEEE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBF07DA285F89FC002AEEE3 /* Assets.xcassets */; };
+		BFBF07DE285F89FC002AEEE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBF07DD285F89FC002AEEE3 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		30D0FEC41014820EC2426AE3 /* Pods-PlateRecognizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlateRecognizer.debug.xcconfig"; path = "Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer.debug.xcconfig"; sourceTree = "<group>"; };
+		598E4218D6289F023A46B77B /* Pods-PlateRecognizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlateRecognizer.release.xcconfig"; path = "Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer.release.xcconfig"; sourceTree = "<group>"; };
+		BF0975ED2860CFAF00616736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BF0975EE2860D8FC00616736 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		BF0EA6602860F0EE00F0F57D /* Roboto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Roboto.ttf; sourceTree = "<group>"; };
+		BF2C276E2873053C00619767 /* RecognizedInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedInfoView.swift; sourceTree = "<group>"; };
+		BF2C2771287382A500619767 /* RecognizedDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedDetails.swift; sourceTree = "<group>"; };
+		BF2C27732874DF2D00619767 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		BF2C27752874E06000619767 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		BF2C27772874E12400619767 /* MapApiVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApiVm.swift; sourceTree = "<group>"; };
+		BF3A4BD52872009D00D018FB /* ScannerOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerOverlay.swift; sourceTree = "<group>"; };
+		BF3A4BD8287204F400D018FB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BF9574DC286D7E3B0048B6BD /* PlateDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateDataFetcher.swift; sourceTree = "<group>"; };
+		BF9574DE286E43180048B6BD /* PlateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateData.swift; sourceTree = "<group>"; };
+		BF9DE1CB2864D0FF00E3C0F4 /* PlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateView.swift; sourceTree = "<group>"; };
+		BF9DE1CD2864D8C500E3C0F4 /* UKNumberPlate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UKNumberPlate.ttf; sourceTree = "<group>"; };
+		BF9DE1CF2864DB3900E3C0F4 /* PlateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateListView.swift; sourceTree = "<group>"; };
+		BF9DE1D12865ACFD00E3C0F4 /* PlatesVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatesVm.swift; sourceTree = "<group>"; };
+		BF9DE1D32865AD8800E3C0F4 /* Plate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plate.swift; sourceTree = "<group>"; };
+		BF9DE1D828663C9B00E3C0F4 /* CameraVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVm.swift; sourceTree = "<group>"; };
+		BFAA74AD286718FB0005E185 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		BFAA74AF2867242F0005E185 /* PlateDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateDetailsView.swift; sourceTree = "<group>"; };
+		BFBF07D3285F89F9002AEEE3 /* PlateRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlateRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFBF07D6285F89F9002AEEE3 /* PlateRecognizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateRecognizerApp.swift; sourceTree = "<group>"; };
+		BFBF07D8285F89F9002AEEE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BFBF07DA285F89FC002AEEE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFBF07DD285F89FC002AEEE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EA2B6F147F39D1B50C9ED9C9 /* Pods_PlateRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlateRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFBF07D0285F89F9002AEEE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA257D4701B1FC71988FB6E9 /* Pods_PlateRecognizer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06F941775773D3A776E57A22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA2B6F147F39D1B50C9ED9C9 /* Pods_PlateRecognizer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		463E9CD00A51F3A26B86D740 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30D0FEC41014820EC2426AE3 /* Pods-PlateRecognizer.debug.xcconfig */,
+				598E4218D6289F023A46B77B /* Pods-PlateRecognizer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BF0EA6612860F0F400F0F57D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BF9DE1CD2864D8C500E3C0F4 /* UKNumberPlate.ttf */,
+				BF0EA6602860F0EE00F0F57D /* Roboto.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BF2C27702873828C00619767 /* Recognized */ = {
+			isa = PBXGroup;
+			children = (
+				BF2C276E2873053C00619767 /* RecognizedInfoView.swift */,
+				BF2C2771287382A500619767 /* RecognizedDetails.swift */,
+			);
+			path = Recognized;
+			sourceTree = "<group>";
+		};
+		BF3A4BD42871D31E00D018FB /* DataFetching */ = {
+			isa = PBXGroup;
+			children = (
+				BF9574DC286D7E3B0048B6BD /* PlateDataFetcher.swift */,
+				BF9574DE286E43180048B6BD /* PlateData.swift */,
+			);
+			path = DataFetching;
+			sourceTree = "<group>";
+		};
+		BF3A4BD7287200AA00D018FB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BFAA74AD286718FB0005E185 /* Utils.swift */,
+				BF3A4BD52872009D00D018FB /* ScannerOverlay.swift */,
+				BF3A4BD8287204F400D018FB /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BF9DE1D52865AF7B00E3C0F4 /* PlateViews */ = {
+			isa = PBXGroup;
+			children = (
+				BF9DE1CF2864DB3900E3C0F4 /* PlateListView.swift */,
+				BF9DE1CB2864D0FF00E3C0F4 /* PlateView.swift */,
+				BFAA74AF2867242F0005E185 /* PlateDetailsView.swift */,
+				BF2C27702873828C00619767 /* Recognized */,
+			);
+			path = PlateViews;
+			sourceTree = "<group>";
+		};
+		BF9DE1D62865AF9000E3C0F4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF9DE1D52865AF7B00E3C0F4 /* PlateViews */,
+				BFBF07D8285F89F9002AEEE3 /* ContentView.swift */,
+				BF2C27732874DF2D00619767 /* MapView.swift */,
+				BF0975EE2860D8FC00616736 /* CameraPreview.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BF9DE1DA28663F4700E3C0F4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BF9DE1D12865ACFD00E3C0F4 /* PlatesVm.swift */,
+				BF9DE1D828663C9B00E3C0F4 /* CameraVm.swift */,
+				BF2C27772874E12400619767 /* MapApiVm.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BFBF07CA285F89F9002AEEE3 = {
+			isa = PBXGroup;
+			children = (
+				BFBF07D5285F89F9002AEEE3 /* PlateRecognizer */,
+				BFBF07D4285F89F9002AEEE3 /* Products */,
+				463E9CD00A51F3A26B86D740 /* Pods */,
+				06F941775773D3A776E57A22 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BFBF07D4285F89F9002AEEE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFBF07D3285F89F9002AEEE3 /* PlateRecognizer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFBF07D5285F89F9002AEEE3 /* PlateRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				BFBF07D6285F89F9002AEEE3 /* PlateRecognizerApp.swift */,
+				BF3A4BD42871D31E00D018FB /* DataFetching */,
+				BFC6ACFD2867687D00176F43 /* Model */,
+				BF9DE1DA28663F4700E3C0F4 /* ViewModels */,
+				BF9DE1D62865AF9000E3C0F4 /* Views */,
+				BFBF07DC285F89FC002AEEE3 /* Preview Content */,
+				BF0EA6612860F0F400F0F57D /* Fonts */,
+				BF3A4BD7287200AA00D018FB /* Utilities */,
+				BFBF07DA285F89FC002AEEE3 /* Assets.xcassets */,
+				BF0975ED2860CFAF00616736 /* Info.plist */,
+			);
+			path = PlateRecognizer;
+			sourceTree = "<group>";
+		};
+		BFBF07DC285F89FC002AEEE3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BFBF07DD285F89FC002AEEE3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BFC6ACFD2867687D00176F43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF9DE1D32865AD8800E3C0F4 /* Plate.swift */,
+				BF2C27752874E06000619767 /* MapModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFBF07D2285F89F9002AEEE3 /* PlateRecognizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFBF07E1285F89FC002AEEE3 /* Build configuration list for PBXNativeTarget "PlateRecognizer" */;
+			buildPhases = (
+				ACEE8D2803735087212D1998 /* [CP] Check Pods Manifest.lock */,
+				BFBF07CF285F89F9002AEEE3 /* Sources */,
+				BFBF07D0285F89F9002AEEE3 /* Frameworks */,
+				BFBF07D1285F89F9002AEEE3 /* Resources */,
+				94CECB97F2280F269089DED4 /* [CP] Embed Pods Frameworks */,
+				209735F3D47D30D9BF287EC5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlateRecognizer;
+			productName = PlateRecognizer;
+			productReference = BFBF07D3285F89F9002AEEE3 /* PlateRecognizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFBF07CB285F89F9002AEEE3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					BFBF07D2285F89F9002AEEE3 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = BFBF07CE285F89F9002AEEE3 /* Build configuration list for PBXProject "PlateRecognizer" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BFBF07CA285F89F9002AEEE3;
+			productRefGroup = BFBF07D4285F89F9002AEEE3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFBF07D2285F89F9002AEEE3 /* PlateRecognizer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFBF07D1285F89F9002AEEE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF9DE1CE2864D8C500E3C0F4 /* UKNumberPlate.ttf in Resources */,
+				BF0EA6622860F32200F0F57D /* Roboto.ttf in Resources */,
+				BFBF07DE285F89FC002AEEE3 /* Preview Assets.xcassets in Resources */,
+				BFBF07DB285F89FC002AEEE3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		209735F3D47D30D9BF287EC5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94CECB97F2280F269089DED4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACEE8D2803735087212D1998 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlateRecognizer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFBF07CF285F89F9002AEEE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF9574DD286D7E3B0048B6BD /* PlateDataFetcher.swift in Sources */,
+				BFBF07D9285F89F9002AEEE3 /* ContentView.swift in Sources */,
+				BF2C27782874E12400619767 /* MapApiVm.swift in Sources */,
+				BF2C2772287382A500619767 /* RecognizedDetails.swift in Sources */,
+				BFBF07D7285F89F9002AEEE3 /* PlateRecognizerApp.swift in Sources */,
+				BFAA74AE286718FB0005E185 /* Utils.swift in Sources */,
+				BF3A4BD62872009D00D018FB /* ScannerOverlay.swift in Sources */,
+				BF9DE1D02864DB3900E3C0F4 /* PlateListView.swift in Sources */,
+				BFAA74B02867242F0005E185 /* PlateDetailsView.swift in Sources */,
+				BF2C276F2873053C00619767 /* RecognizedInfoView.swift in Sources */,
+				BF2C27742874DF2D00619767 /* MapView.swift in Sources */,
+				BF2C27762874E06000619767 /* MapModel.swift in Sources */,
+				BF9DE1D42865AD8800E3C0F4 /* Plate.swift in Sources */,
+				BF9DE1D22865ACFD00E3C0F4 /* PlatesVm.swift in Sources */,
+				BF0975EF2860D8FC00616736 /* CameraPreview.swift in Sources */,
+				BF9DE1D928663C9B00E3C0F4 /* CameraVm.swift in Sources */,
+				BF3A4BD9287204F400D018FB /* Constants.swift in Sources */,
+				BF9574DF286E43180048B6BD /* PlateData.swift in Sources */,
+				BF9DE1CC2864D0FF00E3C0F4 /* PlateView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BFBF07DF285F89FC002AEEE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BFBF07E0285F89FC002AEEE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFBF07E2285F89FC002AEEE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30D0FEC41014820EC2426AE3 /* Pods-PlateRecognizer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PlateRecognizer/Preview Content\"";
+				DEVELOPMENT_TEAM = 9VD63Y2NJT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlateRecognizer/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take pictures with camera";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrii-perm.PlateRecognizer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BFBF07E3285F89FC002AEEE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 598E4218D6289F023A46B77B /* Pods-PlateRecognizer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PlateRecognizer/Preview Content\"";
+				DEVELOPMENT_TEAM = 9VD63Y2NJT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlateRecognizer/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take pictures with camera";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrii-perm.PlateRecognizer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFBF07CE285F89F9002AEEE3 /* Build configuration list for PBXProject "PlateRecognizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFBF07DF285F89FC002AEEE3 /* Debug */,
+				BFBF07E0285F89FC002AEEE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFBF07E1285F89FC002AEEE3 /* Build configuration list for PBXNativeTarget "PlateRecognizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFBF07E2285F89FC002AEEE3 /* Debug */,
+				BFBF07E3285F89FC002AEEE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFBF07CB285F89F9002AEEE3 /* Project object */;
+}
