@@ -32,6 +32,7 @@ struct RecognizedInfoView: View {
               .stroke(lineWidth: 2)
               .foregroundColor(.main)
           }
+          .padding(.horizontal)
         }
       }
       .sheet(item: $presentedInfo) { info in

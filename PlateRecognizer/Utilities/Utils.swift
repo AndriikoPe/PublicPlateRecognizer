@@ -32,3 +32,15 @@ extension UIImage {
     return result
   }
 }
+
+extension String {
+  func subranges(of length: Int) -> [String]? {
+    guard count >= length else { return nil }
+    if count == length { return [self] }
+    return (0...(count - length)).map { i -> String in
+      let start = index(startIndex, offsetBy: i)
+      let end = index(start, offsetBy: 8)
+      return String(self[start..<end])
+    }
+  }
+}

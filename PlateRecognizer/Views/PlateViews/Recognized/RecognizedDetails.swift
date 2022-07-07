@@ -66,7 +66,7 @@ extension RecognizedDetails {
     }
     .sheet(isPresented: $shouldPresentMap) {
       NavigationView {
-        MapView(query: mapValue)
+        MapView(query: mapValue, isPresented: $shouldPresentMap)
           .background(.white)
           .navigationTitle("Мапа")
           .navigationBarTitleDisplayMode(.inline)

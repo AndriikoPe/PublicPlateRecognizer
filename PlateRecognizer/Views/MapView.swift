@@ -9,10 +9,13 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
+  @Binding var isPresented: Bool
+  
   @StateObject private var map: MapApiVm
   
-  init(query: String) {
+  init(query: String, isPresented: Binding<Bool>) {
     _map = StateObject(wrappedValue: MapApiVm(query: query))
+    self._isPresented = isPresented
   }
   
   var body: some View {
@@ -28,12 +31,16 @@ struct MapView: View {
           .tint(.black)
         Spacer()
       }
+      .alert(
+        "Could not get map coordinates.",
+        isPresented: $map.failedDataFetch
+      ) { Button("OK") { isPresented = false } }
     }
   }
 }
 
 struct MapView_Previews: PreviewProvider {
   static var previews: some View {
-    MapView(query: "ТСЦ 1441")
+    MapView(query: "ТСЦ 1441", isPresented: .constant(true))
   }
 }
