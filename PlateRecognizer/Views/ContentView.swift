@@ -134,8 +134,9 @@ struct ContentView: View {
   }
   
   private var presentPhotoPickerButton: some View {
-    smallButton(with: "photo") {}
-    
+    smallButton(with: "photo") {
+      
+    }
   }
   
   private var toggleTorchButton: some View {
