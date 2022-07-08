@@ -58,19 +58,7 @@ final class PlatesVm: ObservableObject {
   
   private func get(_ result: MLKitText, _ image: UIImage) {
     self.image = Image(uiImage: image)
-    guard let plateTextLine = result.blocks.compactMap({ block in
-      block.lines.compactMap { line -> String? in
-        print("recognizing \(line.text)")
-        guard let possiblePlates = line.text.replacingOccurrences(of: " ", with: "").subranges(of: 8)
-        else { return nil }
-        print("Possible plates: \(possiblePlates)")
-        
-        return possiblePlates.first { [weak self] possiblePlate in
-          guard let formatted = self?.format(possiblePlate) else { return false }
-          return Plate.isPlate(value: formatted)
-        }
-      }.first
-    }).first else {
+    guard let plateTextLine = plateTextLine(from: result) else {
       recognitionFailed = true
       return
     }
@@ -93,15 +81,16 @@ final class PlatesVm: ObservableObject {
     self.recognizedPlateText = plate
   }
   
-  private func format(_ value: String) -> String? {
-    guard value.count == 8 else { return nil }
-    
-    let prefixLettersRange = value.startIndex..<value.index(value.startIndex, offsetBy: 2)
-    let digitsRange = value.index(value.startIndex, offsetBy: 2)..<value.index(value.endIndex, offsetBy: -2)
-    let postfixLettersRange = value.index(value.endIndex, offsetBy: -2)..<value.endIndex
-    return value
-      .replacingOccurrences(of: "0", with: "O", options: .literal, range: prefixLettersRange)
-      .replacingOccurrences(of: "O", with: "0", options: .literal, range: digitsRange)
-      .replacingOccurrences(of: "0", with: "O", options: .literal, range: postfixLettersRange)
+  private func plateTextLine(from mlKitText: MLKitText) -> String? {
+    mlKitText.blocks.compactMap({ block in
+      block.lines.compactMap { line in
+        print("recognizing \(line.text)")
+        guard let possiblePlates = line.text.replacingOccurrences(of: " ", with: "").subranges(of: 8)
+        else { return nil }
+        print("Possible plates: \(possiblePlates)")
+        
+        return possiblePlates.first { Plate.isPlate(value: $0) }
+      }.first
+    }).first
   }
 }

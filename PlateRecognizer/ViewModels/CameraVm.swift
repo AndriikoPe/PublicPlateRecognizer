@@ -71,6 +71,14 @@ class CameraVm: NSObject, ObservableObject {
     }
   }
   
+  func pause() {
+    DispatchQueue.global(qos: .background).async { self.session.stopRunning() }
+  }
+  
+  func continueSession() {
+    self.session.startRunning()
+  }
+  
   func takePhoto() {
     DispatchQueue.global(qos: .userInitiated).async {
       self.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)

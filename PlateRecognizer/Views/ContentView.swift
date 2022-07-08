@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State private var image: Image? = nil
+  @State private var uiImage: UIImage?
   @State private var imageViewActive = false
   @State private var presentingPicker = false
   @State private var presentingSaved = false
@@ -31,6 +31,15 @@ struct ContentView: View {
           cameraSmallButtons
         }
       }
+      .sheet(isPresented: $presentingPicker, onDismiss: {
+        presentingPicker = false
+        if let image = uiImage { recognize(image: image) }
+      }) {
+        ImagePickerView(image: $uiImage)
+          .background(.white)
+      }
+      .onChange(of: presentingPicker) { switchCamera(off: $0) }
+      .onChange(of: presentingSaved) { switchCamera(off: $0) }
       .navigationTitle("Licence Plate Scan")
       .navigationViewStyle(.stack)
       .navigationBarTitleDisplayMode(.inline)
@@ -42,7 +51,7 @@ struct ContentView: View {
     VStack {
       HStack {
         NavigationLink(isActive: $imageViewActive, destination: {
-          PlateDetailsView(presenting: $imageViewActive)
+          PlateDetailsView(presenting: $imageViewActive).onAppear { print("Details appeared.") }
         }) {
           scanSmallButton
         }
@@ -63,11 +72,7 @@ struct ContentView: View {
         .frame(width: 55, height: 55)
         .foregroundColor(.white)
       smallButton(with: "viewfinder.circle") {
-        guard let imageData = camera.imageData,
-              let uiImage = UIImage(data: imageData)?.cameraFocusArea()
-        else { return }
-        platesVm.tryToRecognizeText(in: uiImage)
-        imageViewActive = true
+        recognizeImageData()
       }
     }
   }
@@ -135,7 +140,7 @@ struct ContentView: View {
   
   private var presentPhotoPickerButton: some View {
     smallButton(with: "photo") {
-      
+      presentingPicker = true
     }
   }
   
@@ -155,6 +160,14 @@ struct ContentView: View {
       }
     }
   }
+}
+
+// MARK: - Funcs.
+
+extension ContentView {
+  private func switchCamera(off: Bool) {
+    off ? camera.pause() : camera.continueSession()
+  }
   
   private func smallButton(
     with imageName: String,
@@ -169,5 +182,21 @@ struct ContentView: View {
     }
     .foregroundColor(.main)
     .frame(width: 44, height: 44)
+  }
+  
+  private func recognizeImageData() {
+    guard let imageData = camera.imageData,
+          let uiImage = UIImage(data: imageData)?.cameraFocusArea()
+    else { return }
+    platesVm.tryToRecognizeText(in: uiImage)
+    imageViewActive = true
+  }
+  
+  private func recognize(image: UIImage) {
+    platesVm.tryToRecognizeText(in: image)
+    camera.takePhoto()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+      withAnimation { imageViewActive = true }
+    }
   }
 }
