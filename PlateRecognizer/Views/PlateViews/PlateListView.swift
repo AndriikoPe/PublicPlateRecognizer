@@ -11,6 +11,13 @@ import RealmSwift
 struct PlateListView: View {
   @Environment(\.realm) var realm
   @ObservedResults(RecognizedPlateModel.self) var plates
+  
+  private var searchResultPlates: Results<RecognizedPlateModel> {
+    searchText.isEmpty ? plates : plates.where {
+      $0.number.contains(searchText.replacingOccurrences(of: " ", with: "").uppercased())
+    }
+  }
+  
   @State var searchText = ""
   
   private func image(_ data: Data) -> Image? {
@@ -21,7 +28,8 @@ struct PlateListView: View {
   var body: some View {
     ScrollView(showsIndicators: false) {
       LazyVStack(spacing: 0) {
-        ForEach(plates) { plate in
+        searchBar
+        ForEach(searchResultPlates) { plate in
           NavigationLink {
             PlateDetailsView(
               image: image(plate.imageData),
@@ -35,6 +43,27 @@ struct PlateListView: View {
         }
       }
     }
+  }
+  
+  private var searchBar: some View {
+    ZStack {
+      Color.searchBackground
+      HStack {
+        Image(systemName: "magnifyingglass")
+          .padding(.leading, 13)
+        TextField("", text: $searchText)
+          .placeholder(when: searchText.isEmpty) {
+            Text("Search...").foregroundColor(.gray)
+          }
+      }
+    }
+    .foregroundColor(.gray)
+    .frame(height: 40)
+    .overlay {
+      RoundedRectangle(cornerRadius: 13)
+        .stroke(.gray, lineWidth: 1)
+    }
+    .padding()
   }
   
   private func row(for plate: RecognizedPlateModel) -> some View {

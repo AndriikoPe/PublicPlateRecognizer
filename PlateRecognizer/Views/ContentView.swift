@@ -31,9 +31,7 @@ struct ContentView: View {
             .background(.white)
           Spacer()
         }
-        if camera.isTaken {
-          cameraSmallButtons
-        }
+        cameraSmallButtons.opacity(camera.isTaken ? 1 : 0)
       }
       .sheet(isPresented: $presentingPicker, onDismiss: {
         presentingPicker = false
@@ -206,11 +204,6 @@ extension ContentView {
   
   private func recognize(image: UIImage) {
     platesVm.tryToRecognizeText(in: image)
-    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-      print("Image view is active.")
-      withAnimation {
-        imageViewActive = true
-      }
-    }
+    imageViewActive = true
   }
 }

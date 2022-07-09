@@ -9,6 +9,34 @@ import SwiftUI
 
 extension Color {
   static let main = Color("main")
+  static let searchBackground = Color(
+    red: 245.0 / 255.0,
+    green: 245.0 / 255.0,
+    blue: 245.0 / 255.0
+  )
+}
+
+extension View {
+    func placeholder<Content: View>(
+        when shouldShow: Bool,
+        alignment: Alignment = .leading,
+        @ViewBuilder placeholder: () -> Content) -> some View {
+
+        ZStack(alignment: alignment) {
+            placeholder().opacity(shouldShow ? 1 : 0)
+            self
+        }
+    }
+}
+
+extension View {
+    func placeholder(
+        _ text: String,
+        when shouldShow: Bool,
+        alignment: Alignment = .leading) -> some View {
+            
+        placeholder(when: shouldShow, alignment: alignment) { Text(text).foregroundColor(.gray) }
+    }
 }
 
 extension UIImage { 
