@@ -56,9 +56,15 @@ PODS:
   - nanopb/encode (2.30909.0)
   - PromisesObjC (2.1.1)
   - Protobuf (3.21.2)
+  - Realm (10.28.2):
+    - Realm/Headers (= 10.28.2)
+  - Realm/Headers (10.28.2)
+  - RealmSwift (10.28.2):
+    - Realm (= 10.28.2)
 
 DEPENDENCIES:
   - GoogleMLKit/TextRecognition (= 2.2.0)
+  - RealmSwift
 
 SPEC REPOS:
   trunk:
@@ -75,6 +81,8 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - Protobuf
+    - Realm
+    - RealmSwift
 
 SPEC CHECKSUMS:
   GoogleDataTransport: 5fffe35792f8b96ec8d6775f5eccd83c998d5a3b
@@ -90,7 +98,9 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   Protobuf: 818c6a87e44193a77f56b87c6a1c106efda7e062
+  Realm: e617c54ad0f566b3d0f6a2abae7010de05f252ac
+  RealmSwift: 8a516a8759d80d52ebcec1ff1076f5f5159f98b2
 
-PODFILE CHECKSUM: 2277be95c9d442f34d2d0bd991c8dd7c28449cdb
+PODFILE CHECKSUM: fb83a14d2f62ae0d5fe452689aaa5934bb877339
 
 COCOAPODS: 1.11.3

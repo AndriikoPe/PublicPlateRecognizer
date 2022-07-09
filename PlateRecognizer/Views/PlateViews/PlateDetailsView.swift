@@ -10,12 +10,16 @@ import MLKitTextRecognition
 
 struct PlateDetailsView: View {
   @EnvironmentObject private var platesVm: PlatesVm
-  @Binding var presenting: Bool
+  let image: Image?
+  let plateData: PlateData?
+  let recognizedPlateText: Plate?
+  @State var shouldPresentDeletionAlert = false
+  @Environment(\.presentationMode) var presentationMode
   
   var body: some View {
-    VStack {
-      platesVm.image?.resizable().scaledToFit()
-      if let plate = platesVm.recognizedPlateText {
+    VStack(spacing: 0) {
+      image?.resizable().scaledToFit()
+      if let plate = recognizedPlateText {
         recognizedContent(plate)
       }
     }
@@ -23,7 +27,7 @@ struct PlateDetailsView: View {
       "Could not get plate information. Please try again",
       isPresented: $platesVm.recognitionFailed
     ) {
-      Button("OK") { presenting = false }
+      Button("OK") { presentationMode.wrappedValue.dismiss() }
     }
     .background(.white)
   }
@@ -32,7 +36,7 @@ struct PlateDetailsView: View {
   private func recognizedContent(_ plate: Plate) -> some View {
     PlateView(text: plate.number)
       .foregroundColor(.black)
-    if let plateData = platesVm.plateData {
+    if let plateData = plateData {
       RecognizedInfoView(plateDataOperations: plateData.operations)
         .padding(.horizontal)
     } else if platesVm.couldNotGetData {
@@ -47,13 +51,23 @@ struct PlateDetailsView: View {
     
     Spacer()
     Button {
-
+      shouldPresentDeletionAlert = true
     } label: {
       ZStack {
         Capsule(style: .circular)
           .foregroundColor(.red)
         Text("Видалити")
           .foregroundColor(.white)
+      }
+      .alert("Видалити цей номер?", isPresented: $shouldPresentDeletionAlert) {
+        Button("Так") {
+          if let number = recognizedPlateText?.number {
+            print("deleting.")
+            platesVm.delete(number: number)
+            presentationMode.wrappedValue.dismiss()
+          }
+        }
+        Button("Ні", role: .cancel) { shouldPresentDeletionAlert = false }
       }
     }
     .frame(width: 175, height: 55)

@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA257D4701B1FC71988FB6E9 /* Pods_PlateRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2B6F147F39D1B50C9ED9C9 /* Pods_PlateRecognizer.framework */; };
+		2C250099F47F1681071A32A6 /* Pods_PlateRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74CD827BD197F259BC2A103 /* Pods_PlateRecognizer.framework */; };
 		BF0975EF2860D8FC00616736 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0975EE2860D8FC00616736 /* CameraPreview.swift */; };
 		BF0EA6622860F32200F0F57D /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF0EA6602860F0EE00F0F57D /* Roboto.ttf */; };
 		BF2C276F2873053C00619767 /* RecognizedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C276E2873053C00619767 /* RecognizedInfoView.swift */; };
 		BF2C2772287382A500619767 /* RecognizedDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C2771287382A500619767 /* RecognizedDetails.swift */; };
 		BF2C27742874DF2D00619767 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C27732874DF2D00619767 /* MapView.swift */; };
-		BF2C27762874E06000619767 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C27752874E06000619767 /* MapModel.swift */; };
 		BF2C27782874E12400619767 /* MapApiVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C27772874E12400619767 /* MapApiVm.swift */; };
 		BF3A4BD62872009D00D018FB /* ScannerOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A4BD52872009D00D018FB /* ScannerOverlay.swift */; };
 		BF3A4BD9287204F400D018FB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A4BD8287204F400D018FB /* Constants.swift */; };
+		BF4EBBEE2878D8EC00C7D157 /* RecognizedPlateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4EBBED2878D8EC00C7D157 /* RecognizedPlateModel.swift */; };
 		BF62F1AC28777F1000B4D9C5 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62F1AB28777F1000B4D9C5 /* ImagePickerView.swift */; };
 		BF9574DD286D7E3B0048B6BD /* PlateDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9574DC286D7E3B0048B6BD /* PlateDataFetcher.swift */; };
 		BF9574DF286E43180048B6BD /* PlateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9574DE286E43180048B6BD /* PlateData.swift */; };
@@ -35,18 +35,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		30D0FEC41014820EC2426AE3 /* Pods-PlateRecognizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlateRecognizer.debug.xcconfig"; path = "Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer.debug.xcconfig"; sourceTree = "<group>"; };
-		598E4218D6289F023A46B77B /* Pods-PlateRecognizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlateRecognizer.release.xcconfig"; path = "Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer.release.xcconfig"; sourceTree = "<group>"; };
+		92167E3A91FFC7BF6C24B639 /* Pods-PlateRecognizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlateRecognizer.release.xcconfig"; path = "Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer.release.xcconfig"; sourceTree = "<group>"; };
+		AA477FE49C51FA77A4C5BEBE /* Pods-PlateRecognizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlateRecognizer.debug.xcconfig"; path = "Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer.debug.xcconfig"; sourceTree = "<group>"; };
 		BF0975ED2860CFAF00616736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BF0975EE2860D8FC00616736 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		BF0EA6602860F0EE00F0F57D /* Roboto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Roboto.ttf; sourceTree = "<group>"; };
 		BF2C276E2873053C00619767 /* RecognizedInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedInfoView.swift; sourceTree = "<group>"; };
 		BF2C2771287382A500619767 /* RecognizedDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedDetails.swift; sourceTree = "<group>"; };
 		BF2C27732874DF2D00619767 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		BF2C27752874E06000619767 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		BF2C27772874E12400619767 /* MapApiVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApiVm.swift; sourceTree = "<group>"; };
 		BF3A4BD52872009D00D018FB /* ScannerOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerOverlay.swift; sourceTree = "<group>"; };
 		BF3A4BD8287204F400D018FB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BF4EBBED2878D8EC00C7D157 /* RecognizedPlateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedPlateModel.swift; sourceTree = "<group>"; };
 		BF62F1AB28777F1000B4D9C5 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		BF9574DC286D7E3B0048B6BD /* PlateDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateDataFetcher.swift; sourceTree = "<group>"; };
 		BF9574DE286E43180048B6BD /* PlateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateData.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		BFBF07D8285F89F9002AEEE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BFBF07DA285F89FC002AEEE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFBF07DD285F89FC002AEEE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EA2B6F147F39D1B50C9ED9C9 /* Pods_PlateRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlateRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F74CD827BD197F259BC2A103 /* Pods_PlateRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlateRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,28 +71,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA257D4701B1FC71988FB6E9 /* Pods_PlateRecognizer.framework in Frameworks */,
+				2C250099F47F1681071A32A6 /* Pods_PlateRecognizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06F941775773D3A776E57A22 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EA2B6F147F39D1B50C9ED9C9 /* Pods_PlateRecognizer.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		463E9CD00A51F3A26B86D740 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				30D0FEC41014820EC2426AE3 /* Pods-PlateRecognizer.debug.xcconfig */,
-				598E4218D6289F023A46B77B /* Pods-PlateRecognizer.release.xcconfig */,
+				AA477FE49C51FA77A4C5BEBE /* Pods-PlateRecognizer.debug.xcconfig */,
+				92167E3A91FFC7BF6C24B639 /* Pods-PlateRecognizer.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A673373BB4A4A0F719DC526D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F74CD827BD197F259BC2A103 /* Pods_PlateRecognizer.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BF0EA6612860F0F400F0F57D /* Fonts */ = {
@@ -130,6 +130,14 @@
 				BF3A4BD8287204F400D018FB /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BF4EBBEF2878D8F200C7D157 /* DatabaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				BF4EBBED2878D8EC00C7D157 /* RecognizedPlateModel.swift */,
+			);
+			path = DatabaseModel;
 			sourceTree = "<group>";
 		};
 		BF62F1AA28777F0100B4D9C5 /* UIKit */ = {
@@ -179,7 +187,7 @@
 				BFBF07D5285F89F9002AEEE3 /* PlateRecognizer */,
 				BFBF07D4285F89F9002AEEE3 /* Products */,
 				463E9CD00A51F3A26B86D740 /* Pods */,
-				06F941775773D3A776E57A22 /* Frameworks */,
+				A673373BB4A4A0F719DC526D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,7 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				BF9DE1D32865AD8800E3C0F4 /* Plate.swift */,
-				BF2C27752874E06000619767 /* MapModel.swift */,
+				BF4EBBEF2878D8F200C7D157 /* DatabaseModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,12 +240,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFBF07E1285F89FC002AEEE3 /* Build configuration list for PBXNativeTarget "PlateRecognizer" */;
 			buildPhases = (
-				ACEE8D2803735087212D1998 /* [CP] Check Pods Manifest.lock */,
+				32F81BBE9D49FE4D73038702 /* [CP] Check Pods Manifest.lock */,
 				BFBF07CF285F89F9002AEEE3 /* Sources */,
 				BFBF07D0285F89F9002AEEE3 /* Frameworks */,
 				BFBF07D1285F89F9002AEEE3 /* Resources */,
-				94CECB97F2280F269089DED4 /* [CP] Embed Pods Frameworks */,
-				209735F3D47D30D9BF287EC5 /* [CP] Copy Pods Resources */,
+				32B148245B9C947EBEC0BB4E /* [CP] Embed Pods Frameworks */,
+				4F7CA47A7238D5BD20529CFB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -296,24 +304,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		209735F3D47D30D9BF287EC5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		94CECB97F2280F269089DED4 /* [CP] Embed Pods Frameworks */ = {
+		32B148245B9C947EBEC0BB4E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -330,7 +321,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ACEE8D2803735087212D1998 /* [CP] Check Pods Manifest.lock */ = {
+		32F81BBE9D49FE4D73038702 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -352,6 +343,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4F7CA47A7238D5BD20529CFB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlateRecognizer/Pods-PlateRecognizer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -360,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF9574DD286D7E3B0048B6BD /* PlateDataFetcher.swift in Sources */,
+				BF4EBBEE2878D8EC00C7D157 /* RecognizedPlateModel.swift in Sources */,
 				BFBF07D9285F89F9002AEEE3 /* ContentView.swift in Sources */,
 				BF2C27782874E12400619767 /* MapApiVm.swift in Sources */,
 				BF2C2772287382A500619767 /* RecognizedDetails.swift in Sources */,
@@ -370,7 +379,6 @@
 				BFAA74B02867242F0005E185 /* PlateDetailsView.swift in Sources */,
 				BF2C276F2873053C00619767 /* RecognizedInfoView.swift in Sources */,
 				BF2C27742874DF2D00619767 /* MapView.swift in Sources */,
-				BF2C27762874E06000619767 /* MapModel.swift in Sources */,
 				BF9DE1D42865AD8800E3C0F4 /* Plate.swift in Sources */,
 				BF9DE1D22865ACFD00E3C0F4 /* PlatesVm.swift in Sources */,
 				BF0975EF2860D8FC00616736 /* CameraPreview.swift in Sources */,
@@ -503,7 +511,7 @@
 		};
 		BFBF07E2285F89FC002AEEE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30D0FEC41014820EC2426AE3 /* Pods-PlateRecognizer.debug.xcconfig */;
+			baseConfigurationReference = AA477FE49C51FA77A4C5BEBE /* Pods-PlateRecognizer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -536,7 +544,7 @@
 		};
 		BFBF07E3285F89FC002AEEE3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 598E4218D6289F023A46B77B /* Pods-PlateRecognizer.release.xcconfig */;
+			baseConfigurationReference = 92167E3A91FFC7BF6C24B639 /* Pods-PlateRecognizer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

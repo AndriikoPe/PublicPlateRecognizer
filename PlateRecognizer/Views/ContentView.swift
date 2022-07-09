@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State private var uiImage: UIImage?
+  @State private var galleryUIImage: UIImage?
   @State private var imageViewActive = false
   @State private var presentingPicker = false
   @State private var presentingSaved = false
   
   @StateObject private var camera = CameraVm()
   @EnvironmentObject private var platesVm: PlatesVm
+  private var galleryImage: Image? {
+    guard let uiImage = galleryUIImage else { return nil }
+    return Image(uiImage: uiImage)
+  }
   
   var body: some View {
     NavigationView {
@@ -33,9 +37,9 @@ struct ContentView: View {
       }
       .sheet(isPresented: $presentingPicker, onDismiss: {
         presentingPicker = false
-        if let image = uiImage { recognize(image: image) }
+        if let image = galleryUIImage { recognize(image: image) }
       }) {
-        ImagePickerView(image: $uiImage)
+        ImagePickerView(image: $galleryUIImage)
           .background(.white)
       }
       .onChange(of: presentingPicker) { switchCamera(off: $0) }
@@ -51,7 +55,11 @@ struct ContentView: View {
     VStack {
       HStack {
         NavigationLink(isActive: $imageViewActive, destination: {
-          PlateDetailsView(presenting: $imageViewActive).onAppear { print("Details appeared.") }
+          PlateDetailsView(
+            image: Image(uiImage: platesVm.image ?? UIImage()),
+            plateData: platesVm.plateData,
+            recognizedPlateText: platesVm.recognizedPlateText
+          )
         }) {
           scanSmallButton
         }
@@ -166,7 +174,11 @@ struct ContentView: View {
 
 extension ContentView {
   private func switchCamera(off: Bool) {
-    off ? camera.pause() : camera.continueSession()
+    if off {
+      camera.pause()
+    } else if !camera.isTaken {
+      camera.continueSession()
+    }
   }
   
   private func smallButton(
@@ -194,9 +206,11 @@ extension ContentView {
   
   private func recognize(image: UIImage) {
     platesVm.tryToRecognizeText(in: image)
-    camera.takePhoto()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-      withAnimation { imageViewActive = true }
+    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+      print("Image view is active.")
+      withAnimation {
+        imageViewActive = true
+      }
     }
   }
 }

@@ -20,6 +20,12 @@ struct Plate: Identifiable, Codable {
     self.id = UUID()
   }
   
+  init() {
+    self.noSpacesNumber = ""
+    self.number = ""
+    self.id = UUID()
+  }
+  
   private static let regex = "^[A-Z]{2}[0-9]{4}[A-Z]{2}$"
   
   static func isPlate(value: String) -> Bool {

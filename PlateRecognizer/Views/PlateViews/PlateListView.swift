@@ -6,16 +6,28 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct PlateListView: View {
-  @EnvironmentObject var platesVm: PlatesVm
+  @Environment(\.realm) var realm
+  @ObservedResults(RecognizedPlateModel.self) var plates
+  @State var searchText = ""
+  
+  private func image(_ data: Data) -> Image? {
+    guard let uiImage = UIImage(data: data) else { return nil }
+    return Image(uiImage: uiImage)
+  }
   
   var body: some View {
     ScrollView(showsIndicators: false) {
       LazyVStack(spacing: 0) {
-        ForEach(platesVm.savedPlates) { plate in
+        ForEach(plates) { plate in
           NavigationLink {
-            PlateDetailsView(presenting: .constant(true))
+            PlateDetailsView(
+              image: image(plate.imageData),
+              plateData: plate.getPlateData,
+              recognizedPlateText: plate.getPlate
+            )
           } label: {
             row(for: plate)
           }
@@ -25,7 +37,7 @@ struct PlateListView: View {
     }
   }
   
-  private func row(for plate: Plate) -> some View {
+  private func row(for plate: RecognizedPlateModel) -> some View {
     ZStack {
       Color.white.frame(height: 120)
         .shadow(color: .black.opacity(0.4), radius: 4, x: 0, y: 2)
@@ -38,6 +50,5 @@ struct PlateListView: View {
 struct PlateListView_Previews: PreviewProvider {
   static var previews: some View {
     PlateListView()
-      .environmentObject(PlatesVm.defaultVm)
   }
 }

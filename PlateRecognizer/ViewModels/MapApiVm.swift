@@ -8,54 +8,50 @@
 import MapKit
 
 class MapApiVm: ObservableObject {
-  private let baseUrl = "http://api.positionstack.com/v1/forward"
-  private let apiKey = "350ccfcf72d1f5b66b5aa80cb55e06c0"
+  private static let kyiv = CLLocationCoordinate2D(
+    latitude: 30.53268990945071,
+    longitude: 50.40241133943426
+  )
   
   @Published var region: MKCoordinateRegion?
   @Published var location: AnnotationLocation?
   @Published var failedDataFetch = false
   
   init(query: String) {
-    loadLocation(query, delta: 0.5)
+    load(address: query)
   }
   
-  private func loadLocation(_ address: String, delta: Double) {
-    guard let stringUrl = "\(baseUrl)?access_key=\(apiKey)&query=\(address)"
-            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-          let url = URL(string: stringUrl)
-    else { return }
-    print("Requesting url: \(url)")
+  private func load(address: String) {
     Task {
       do {
-        let (data, _) = try await URLSession.shared.data(from: url)
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.naturalLanguageQuery = "\(address)"
+        searchRequest.region = MKCoordinateRegion(
+          center: MapApiVm.kyiv,
+          span: MKCoordinateSpan(latitudeDelta: 20000, longitudeDelta: 20000))
+        let activeSearch = MKLocalSearch(request: searchRequest)
         
-        let coordinates = try JSONDecoder().decode(Address.self, from: data)
-        guard let details = coordinates.data.first else {
-          print("Got empty map data")
-          DispatchQueue.main.async { [weak self] in
-            self?.failedDataFetch = true
-          }
-          return
-        }
-        DispatchQueue.main.async { [weak self] in
-          let lat = details.latitude
-          let long = details.longitude
-          let name = details.name
-          
-          let center = CLLocationCoordinate2D(latitude: lat, longitude: long)
-          self?.region = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: lat, longitude: long),
-            span: MKCoordinateSpan(latitudeDelta: delta, longitudeDelta: delta)
-          )
-          
-          self?.location = AnnotationLocation(name: name ?? "", coordinate: center)
-        }
+        let result = try await activeSearch.start()
         
+        let lat = result.boundingRegion.center.latitude
+        let long = result.boundingRegion.center.longitude
+        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        print("Long = \(long), lat = \(lat)")
+        let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+        
+        DispatchQueue.main.async {
+          self.location = AnnotationLocation(coordinate: coordinate)
+          self.region = MKCoordinateRegion(center: coordinate, span: span)
+        }
       } catch {
-        print("Could not get address on map: \(error)")
-        failedDataFetch = true
+        DispatchQueue.main.async { [weak self] in self?.failedDataFetch = true }
+        print("Could not get map coordinates: \(error)")
       }
     }
   }
 }
-  
+
+struct AnnotationLocation: Identifiable {
+  let id = UUID()
+  let coordinate: CLLocationCoordinate2D
+}

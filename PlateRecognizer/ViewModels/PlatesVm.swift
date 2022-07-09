@@ -12,6 +12,7 @@ import MLKitTextRecognition
 typealias MLKitText = MLKitTextRecognition.Text
 
 final class PlatesVm: ObservableObject {
+  @Environment(\.realm) var realm
   // MLKit failed to recognized text.
   @Published var recognitionFailed = false
   
@@ -19,7 +20,7 @@ final class PlatesVm: ObservableObject {
   @Published var couldNotGetData = false
   
   @Published var recognizedPlateText: Plate? = nil
-  @Published var image: Image? = nil
+  @Published var image: UIImage? = nil
   @Published var plateData: PlateData? = nil
   
   var savedPlates = [Plate]()
@@ -56,8 +57,20 @@ final class PlatesVm: ObservableObject {
     }
   }
   
+  func delete(number: String, replacing model: RecognizedPlateModel? = nil) {
+    if let savedValue = realm.objects(RecognizedPlateModel.self)
+        .filter("number = %@", number).first,
+       savedValue != model {
+      let savedValueOperations = savedValue.recognizedData
+      try? realm.write {
+        realm.delete(savedValueOperations)
+        realm.delete(savedValue)
+      }
+    }
+  }
+  
   private func get(_ result: MLKitText, _ image: UIImage) {
-    self.image = Image(uiImage: image)
+    self.image = image
     guard let plateTextLine = plateTextLine(from: result) else {
       recognitionFailed = true
       return
@@ -74,11 +87,26 @@ final class PlatesVm: ObservableObject {
         return
       }
       DispatchQueue.main.async { [weak self] in
-        self?.plateData = plateData
+        guard let self = self else { return }
+        self.plateData = plateData
+        self.save(number: plate.number, data: plateData)
       }
     }
     
     self.recognizedPlateText = plate
+  }
+  
+  private func save(number: String, data plateData: PlateData) {
+    let model = RecognizedPlateModel(
+      number: number,
+      imageData: self.image?.jpegData(compressionQuality: 1),
+      recognizedData: plateData
+    )
+    delete(number: number, replacing: model)
+    
+    try? realm.write {
+      realm.add(model)
+    }
   }
   
   private func plateTextLine(from mlKitText: MLKitText) -> String? {

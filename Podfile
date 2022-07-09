@@ -7,4 +7,5 @@ target 'PlateRecognizer' do
 
   # Pods for PlateRecognizer
   pod 'GoogleMLKit/TextRecognition','2.2.0'
+  pod 'RealmSwift'
 end

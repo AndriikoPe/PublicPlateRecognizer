@@ -13,7 +13,7 @@ struct RecognizedInfoView: View {
   
   var body: some View {
     ScrollView {
-      VStack {
+      VStack(spacing: 0) {
         ForEach(plateDataOperations) { operation in
           Button {
             presentedInfo = operation
@@ -32,7 +32,7 @@ struct RecognizedInfoView: View {
               .stroke(lineWidth: 2)
               .foregroundColor(.main)
           }
-          .padding(.horizontal)
+          .padding(5)
         }
       }
       .sheet(item: $presentedInfo) { info in
