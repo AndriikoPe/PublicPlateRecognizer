@@ -4,7 +4,6 @@
 //   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
 import Foundation
-import CoreText
 
 struct PlateData: Codable {
   let operations: [OperationElement]
