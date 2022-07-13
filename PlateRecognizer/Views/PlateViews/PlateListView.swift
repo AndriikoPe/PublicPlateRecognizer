@@ -26,9 +26,25 @@ struct PlateListView: View {
   }
   
   var body: some View {
+    ZStack {
+      Color.white
+      VStack {
+        searchBar
+        if searchResultPlates.isEmpty {
+          Spacer()
+          Text("Нічого немає")
+            .foregroundColor(.black)
+          Spacer()
+        } else {
+          list
+        }
+      }
+    }
+  }
+  
+  private var list: some View {
     ScrollView(showsIndicators: false) {
       LazyVStack(spacing: 0) {
-        searchBar
         ForEach(searchResultPlates) { plate in
           NavigationLink {
             PlateDetailsView(

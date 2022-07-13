@@ -38,7 +38,6 @@ struct ContentView: View {
         if let image = galleryUIImage { recognize(image: image) }
       }) {
         ImagePickerView(image: $galleryUIImage)
-          .background(.white)
       }
       .onChange(of: presentingPicker) { switchCamera(off: $0) }
       .onChange(of: presentingSaved) { switchCamera(off: $0) }
